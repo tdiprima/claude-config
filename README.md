@@ -265,14 +265,6 @@ mkdir -p ~/.claude/{rules,agents}
 
 * `repo/CLAUDE.md` (team shared) and/or `repo/.claude/rules/` ([Claude][4])
 
----
-
-If you paste your big DevSecOps coding-criteria doc here, I'll convert it into:
-
-* a clean **global CLAUDE.md** (minimal, universal)
-* a modular **~/.claude/rules/** pack (python/security/testing/etc.)
-* plus a couple **skills** like `/review` and `/threat-model` so you stop reinventing the wheel every project
-
 [1]: https://code.claude.com/docs/en/memory "How Claude remembers your project - Claude Code Docs"
 [2]: https://code.claude.com/docs/en/sub-agents "Create custom subagents - Claude Code Docs"
 [3]: https://code.claude.com/docs/en/interactive-mode "Interactive mode - Claude Code Docs"
