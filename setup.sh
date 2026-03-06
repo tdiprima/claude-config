@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+# 🎯 Finds the repo location automatically (so you can run it from anywhere)
+# 🧠 Verifies the claude/ directory exists
+# 💾 Backs up ~/.claude before modifying it
+# 📦 Uses rsync for safe merging
+# 🌈 Colored output + status messages
+
+set -e
 
 # Colors
 GREEN="\033[0;32m"
@@ -7,30 +14,53 @@ BLUE="\033[0;34m"
 RED="\033[0;31m"
 NC="\033[0m"
 
-echo -e "${BLUE}🚀 Claude config installer starting...${NC}"
+echo -e "${BLUE}🚀 Claude config installer${NC}"
+echo
 
-SOURCE_DIR="./claude"
+# Detect repo root
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SOURCE_DIR="$SCRIPT_DIR/claude"
 TARGET_DIR="$HOME/.claude"
 
-# Check if source exists
+echo -e "${BLUE}📍 Repo location:${NC} $SCRIPT_DIR"
+
+# Verify source exists
 if [ ! -d "$SOURCE_DIR" ]; then
-  echo -e "${RED}❌ Source directory '$SOURCE_DIR' not found.${NC}"
-  echo -e "${RED}Make sure you're running this script from the repo root.${NC}"
-  exit 1
+    echo -e "${RED}❌ Could not find 'claude/' directory in repo.${NC}"
+    echo -e "${RED}Expected location: $SOURCE_DIR${NC}"
+    exit 1
 fi
 
-# Check if ~/.claude exists
+echo -e "${GREEN}✅ Found Claude config directory${NC}"
+echo
+
+# Backup existing ~/.claude
 if [ -d "$TARGET_DIR" ]; then
-  echo -e "${YELLOW}⚠️  ~/.claude already exists.${NC}"
-  echo -e "${YELLOW}Merging files from repo into existing directory...${NC}"
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    BACKUP_DIR="$HOME/.claude.backup.$TIMESTAMP"
+
+    echo -e "${YELLOW}⚠️  Existing ~/.claude detected${NC}"
+    echo -e "${BLUE}💾 Creating backup:${NC} $BACKUP_DIR"
+
+    cp -rp "$TARGET_DIR" "$BACKUP_DIR"
+
+    echo -e "${GREEN}✅ Backup created${NC}"
+    echo
 else
-  echo -e "${BLUE}📁 ~/.claude not found. Creating it...${NC}"
-  mkdir -p "$TARGET_DIR"
-  echo -e "${GREEN}✅ Directory created.${NC}"
+    echo -e "${BLUE}📁 ~/.claude does not exist — creating it${NC}"
+    mkdir -p "$TARGET_DIR"
+    echo -e "${GREEN}✅ Directory created${NC}"
+    echo
 fi
 
-# Copy files
-echo -e "${BLUE}📦 Syncing Claude configuration...${NC}"
+# Sync files
+echo -e "${BLUE}📦 Syncing configuration...${NC}"
+
 rsync -av "$SOURCE_DIR"/ "$TARGET_DIR"/
 
-echo -e "${GREEN}🎉 Done! Claude config is now synced to ~/.claude${NC}"
+echo
+echo -e "${GREEN}🎉 Claude configuration installed successfully!${NC}"
+echo -e "${BLUE}📂 Location:${NC} $TARGET_DIR"
+
+# If something breaks, you just:
+# mv ~/.claude.backup.TIMESTAMP ~/.claude
