@@ -4,30 +4,21 @@ This repository stores my Claude configuration files so they can be quickly set 
 
 Instead of copying files into `~/.claude`, this repo uses a **symlink approach** so the configuration is always synced with the repository.
 
-## Installation
+## Quick Start (New Machine)
 
-Clone the repository:
+Clone the repository and run bootstrap
 
 ```bash
 git clone <repo-url>
-cd <repo-name>
-```
-
-Run the setup script:
-
-```bash
-./link.sh
+cd <repo>
+./bootstrap.sh
 ```
 
 This will:
 
-1. Check for an existing `~/.claude`
-2. Back it up if it exists
-3. Create a symlink from:
-
-```sh
-~/.claude → <repo>/claude
-```
+- configure Claude
+- link the repo to `~/.claude`
+- prepare your environment for development
 
 ## Why Use a Symlink?
 
