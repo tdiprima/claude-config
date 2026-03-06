@@ -1,6 +1,6 @@
 # Claude Config
 
-Claude configuration + bootstrap script for quickly setting up new machines.
+My Claude configuration + bootstrap script for quickly setting up new machines.
 
 ## Quick Install
 
