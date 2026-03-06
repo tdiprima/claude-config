@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cp -r claude ~/.claude
+cp -rp claude ~/.claude
