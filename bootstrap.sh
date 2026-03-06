@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
 
+###############################################################################
+# bootstrap.sh
+#
+# 🚀 Machine bootstrap script
+#
+# This script prepares a new machine for working with Claude by:
+#   1. Checking required dependencies
+#   2. Installing Claude Code
+#   3. Linking this repository's Claude configuration to ~/.claude
+#
+# After running this script, your Claude environment should be ready to use.
+###############################################################################
+
 set -e
 
 # Colors
@@ -9,7 +22,7 @@ BLUE="\033[0;34m"
 RED="\033[0;31m"
 NC="\033[0m"
 
-echo -e "${BLUE}🚀 Machine bootstrap starting${NC}"
+echo -e "${BLUE}🚀 Starting machine bootstrap${NC}"
 echo
 
 # Detect repo root
@@ -24,41 +37,40 @@ echo
 
 echo -e "${BLUE}🔍 Checking dependencies...${NC}"
 
-if ! command -v git >/dev/null 2>&1; then
-    echo -e "${RED}❌ git is not installed${NC}"
-    exit 1
-fi
-
-if ! command -v rsync >/dev/null 2>&1; then
-    echo -e "${RED}❌ rsync is not installed${NC}"
-    exit 1
-fi
+for cmd in git curl rsync; do
+    if ! command -v "$cmd" >/dev/null 2>&1; then
+        echo -e "${RED}❌ Required command not found: $cmd${NC}"
+        exit 1
+    fi
+done
 
 echo -e "${GREEN}✅ Dependencies look good${NC}"
 echo
 
 ############################################
-# Claude config
+# Install Claude Code
 ############################################
 
-echo -e "${BLUE}🤖 Installing Claude configuration...${NC}"
+echo -e "${BLUE}🤖 Installing Claude Code...${NC}"
+
+if command -v claude >/dev/null 2>&1; then
+    echo -e "${GREEN}✅ Claude already installed${NC}"
+else
+    curl -fsSL https://claude.ai/install.sh | bash
+fi
+
+echo -e "${GREEN}✅ Claude Code installed${NC}"
+echo
+
+############################################
+# Install Claude config
+############################################
+
+echo -e "${BLUE}🔧 Linking Claude configuration...${NC}"
 
 "$SCRIPT_DIR/link.sh"
 
 echo
-
-############################################
-# Optional future sections
-############################################
-
-# Example sections I might add later:
-#
-# - install Homebrew
-# - install CLI tools
-# - install dotfiles
-# - install dev environments
-#
-
 echo -e "${GREEN}🎉 Bootstrap complete!${NC}"
+echo -e "${BLUE}Claude should now be ready to use.${NC}"
 echo
-echo -e "${BLUE}Your machine is ready.${NC}"
