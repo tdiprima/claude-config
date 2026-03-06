@@ -1,8 +1,8 @@
 # Claude 🐾
 
-This repo exists so I don't have to think about it the next time I have to set up a new machine.
+This repo exists so I can bootstrap a new machine fast. ⚡️
 
-CLAUDE.md and the `rules` and `skills` directories go in `/Users/bear/.claude`
+`CLAUDE.md` and the `rules` and `skills` directories go in `/Users/bear/.claude`
 
 ```sh
 # First, install Claude Code
