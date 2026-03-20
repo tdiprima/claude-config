@@ -8,6 +8,7 @@ Follow secure, production-quality engineering practices.
 - Each function should do **one clearly defined job**.
 - Validate all external input.
 - Fail safely with clear error messages.
+- Do not repeat code - reuse functions and fields.
 
 ## Security Defaults
 - Never hardcode secrets.
