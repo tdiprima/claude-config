@@ -11,3 +11,5 @@ Write a README.md for this project with the following structure:
 Use natural, compelling headings instead of generic labels. For instance, instead of "Problem" you might use something specific to the domain. Instead of "Solution" describe what the project actually does.
 
 Read the codebase before writing. Base everything on what the project actually does, not assumptions.
+
+Do not use line separations.
