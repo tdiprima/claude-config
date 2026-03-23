@@ -127,6 +127,20 @@ async function loadAndDisplay() {
 - Derive values from state instead of storing computed results as separate state. One source of truth.
 - When managing complex state, use a simple object with clear update functions rather than scattered variables.
 
+## Security
+
+- Never use `eval()`, `Function()`, or `setTimeout`/`setInterval` with string arguments. There is almost always a better way.
+- Never build HTML with string concatenation or template literals from user input. Use `textContent`, DOM APIs, or a framework's built-in escaping.
+- Sanitize and validate all user input before using it — on the client AND the server. Client-side validation is for UX, not security.
+- Never store sensitive data (tokens, passwords, PII) in `localStorage` or `sessionStorage`. They're accessible to any script on the page. Use `httpOnly` cookies for auth tokens.
+- Use `Content-Security-Policy` headers. Avoid `unsafe-inline` and `unsafe-eval` whenever possible.
+- When using `fetch`, never interpolate user input directly into URLs without encoding it with `encodeURIComponent`.
+- Be cautious with `innerHTML`, `outerHTML`, `insertAdjacentHTML`, and `document.write`. All of them can execute injected scripts. Prefer safe DOM APIs.
+- When using `postMessage`, always check `event.origin` against an allowlist. Never trust messages blindly.
+- Never put secrets (API keys, tokens, credentials) in client-side JavaScript. Anything in the browser is visible to the user.
+- When loading third-party scripts, use `integrity` attributes (Subresource Integrity) so tampered scripts won't execute.
+- Treat every piece of data from outside your code (user input, URL params, API responses, `postMessage`) as untrusted until validated.
+
 ## General Rules
 
 - Avoid ternaries more than one level deep. Nested ternaries are unreadable.
