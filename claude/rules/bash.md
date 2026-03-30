@@ -7,8 +7,6 @@ Write bash scripts that a tired developer at 2 AM can read and understand immedi
 ## Structure & Safety
 
 - Start every script with `#!/usr/bin/env bash`
-- Always use `set -euo pipefail` right after the shebang
-- Use `set -x` during development for trace debugging, remove it before committing
 
 ## Readability Over Brevity
 
