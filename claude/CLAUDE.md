@@ -28,3 +28,5 @@ Follow secure, production-quality engineering practices.
 - Avoid `print` in production code.
 
 If project-specific rules exist, follow those instead.
+
+Write for Ubuntu, RHEL, and Rocky Linux - NOT macOS.
