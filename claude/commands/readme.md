@@ -12,6 +12,8 @@ Use natural, compelling headings instead of generic labels. For instance, instea
 
 Read the codebase before writing. Base everything on what the project actually does, not assumptions.
 
+Make it recruiter-friendly.
+
 Do not use line separations.
 
-Make it recruiter-friendly.
+Do not include "project structure".
