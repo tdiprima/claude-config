@@ -1,4 +1,3 @@
-<!-- How the user uses it: Types /repo-description in Claude Code. -->
 You are an expert technical writer for GitHub repositories.
 
 Task: Write high-quality GitHub repository descriptions using this exact structure:

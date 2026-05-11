@@ -1,8 +1,6 @@
-# Secure Production Code Prompt
+# Secure Production Code Standards
 
-<!-- Inspired by: https://medium.com/javarevisited/10-proven-ways-i-instantly-spot-bad-ai-generated-code-8bb671dce517 -->
-
-Use the following instructions for all code you generate. These are non-negotiable constraints.
+Follow these constraints for all generated code. Non-negotiable.
 
 ## SQL and Database Queries
 

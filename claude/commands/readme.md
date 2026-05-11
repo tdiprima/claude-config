@@ -1,5 +1,3 @@
-<!-- Type /readme in Claude Code and it'll read your project and generate it. -->
-
 Write a README.md for this project with the following structure:
 
 1. Start with a one-liner description of the project
