@@ -16,3 +16,5 @@ Focus on:
 - Team/scope signals (e.g. number of services, endpoints, users if inferable)
 
 Avoid vague language like "worked on" or "helped with." Use strong verbs: built, reduced, automated, migrated, designed, optimized, etc.
+
+Don't use overly flowery language; keep it simple.
