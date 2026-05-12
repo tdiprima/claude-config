@@ -1,0 +1,18 @@
+# Resume Bullet Generator
+
+Look at the code in this repository — including recent commits, key files, and overall architecture — and generate 3–5 strong resume bullet points that describe the work done here.
+
+For each bullet, use the RAA format (Result · Action · Action):
+- Lead with a quantified or specific result (estimate if needed — e.g. "~X% faster", "across N services")
+- Follow with the concrete action taken and the method/technology used
+- Keep each bullet to 1–2 lines max
+
+Focus on:
+- Scale, complexity, or impact of the system
+- Specific technologies, patterns, or architectural decisions
+- Any performance, reliability, cost, or developer-experience improvements
+- Team/scope signals (e.g. number of services, endpoints, users if inferable)
+
+Avoid vague language like "worked on" or "helped with." Use strong verbs: built, reduced, automated, migrated, designed, optimized, etc.
+
+Output the bullets as a plain list, then offer 1–2 follow-up suggestions for what metrics or context the user could add to strengthen them further.
