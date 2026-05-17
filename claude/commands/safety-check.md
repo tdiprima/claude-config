@@ -1,4 +1,4 @@
-# Code Safety Review
+# For vetting untrusted code
 
 Review this codebase and answer: **If I run this, could it grab my personal information or harm my computer?**
 
