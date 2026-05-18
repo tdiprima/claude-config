@@ -27,6 +27,7 @@ Follow secure, production-quality engineering practices.
 - Use structured logging when possible.
 - Avoid `print` in production code.
 
-If project-specific rules exist, follow those instead.
-
-Write for Ubuntu, RHEL, and Rocky Linux - NOT macOS.
+## Other
+* Write for Ubuntu, RHEL, and Rocky Linux - NOT macOS.
+* Preserve all existing comments.
+* If project-specific rules exist, follow those instead.
