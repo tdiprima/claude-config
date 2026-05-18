@@ -28,6 +28,7 @@ Follow secure, production-quality engineering practices.
 - Avoid `print` in production code.
 
 ## Other
+* Look for the .codegraph folder to learn about the codebase.
 * Write for Ubuntu, RHEL, and Rocky Linux - NOT macOS.
 * Preserve all existing comments.
 * If project-specific rules exist, follow those instead.
