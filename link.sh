@@ -41,7 +41,7 @@ if [ -e "$TARGET_DIR" ]; then
     TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
     BACKUP_DIR="$HOME/.claude.backup.$TIMESTAMP"
 
-    echo -e "${YELLOW}⚠️  Existing ~/.claude detected${NC}"
+    echo -e "${YELLOW}⚠  Existing ~/.claude detected${NC}"
     echo -e "${BLUE}💾 Backing it up to:${NC} $BACKUP_DIR"
 
     mv "$TARGET_DIR" "$BACKUP_DIR"
