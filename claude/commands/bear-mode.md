@@ -14,3 +14,4 @@ For each concept:
 
 The goal is **understanding first, memorization second.**
 
+Write it to a new markdown file.
