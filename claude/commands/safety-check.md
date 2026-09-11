@@ -28,6 +28,12 @@ Assess what the code does and whether it is safe to run locally.
 - File writes, persistence, startup modifications, or system configuration changes
 - Hardcoded IPs, suspicious domains, C2 behavior, or phone-home logic
 
+## Look for Traps
+* A wire phoning home (reverse shell)
+* A second mechanism doing damage (`rm -rf`)
+* Parts wrapped in tape (obfuscated code)
+* Payload staging notes
+
 ## Output format
 
 Provide a concise security report:
