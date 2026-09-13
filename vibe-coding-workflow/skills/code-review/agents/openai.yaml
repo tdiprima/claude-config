@@ -1,0 +1,7 @@
+interface:
+  display_name: "Code Review"
+  short_description: "Correctness and maintainability review"
+  default_prompt: "Use $code-review to review the current diff and report findings without editing code."
+
+policy:
+  allow_implicit_invocation: true

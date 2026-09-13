@@ -1,0 +1,7 @@
+interface:
+  display_name: "Test Review"
+  short_description: "Coverage, edge-case, and adversarial test review"
+  default_prompt: "Use $test-review to check whether the tests prove the current diff works and list the missing tests."
+
+policy:
+  allow_implicit_invocation: true

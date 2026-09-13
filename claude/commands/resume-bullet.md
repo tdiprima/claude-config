@@ -18,3 +18,7 @@ Focus on:
 Avoid vague language like "worked on" or "helped with." Use strong verbs: built, reduced, automated, migrated, designed, optimized, etc.
 
 Don't use overly flowery language; keep it simple.
+
+Start each bullet with an action verb.
+1–2 lines per point, max.
+Break up complex actions into multiple bullets.

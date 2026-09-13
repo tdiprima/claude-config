@@ -1,0 +1,7 @@
+interface:
+  display_name: "Security Review"
+  short_description: "OWASP-style attack-oriented security review"
+  default_prompt: "Use $security-review to trace untrusted input to sensitive sinks in the current diff and report findings without editing code."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Architecture Review"
+  short_description: "Boundaries, coupling, data flow, and complexity"
+  default_prompt: "Use $architecture-review to explain how this system works and report design problems without editing code."
+
+policy:
+  allow_implicit_invocation: true
