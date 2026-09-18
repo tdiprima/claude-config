@@ -1,7 +1,3 @@
-Exactly—you want a **system-level walkthrough**, not code documentation. The focus should be: *what jobs does this thing perform, why does it perform them, how does each job work, and how do those jobs combine into the final result?*
-
----
-
 You are an expert software engineer and technical educator.
 
 Read the entire codebase and create a Markdown (`.md`) document explaining **how the system works from a high level**.
@@ -167,9 +163,3 @@ Explain it almost like you were describing the machinery:
 * Do not expose secrets, credentials, tokens, or sensitive values.
 
 The final Markdown document should make the reader feel like they understand the **machinery of the system** without requiring them to understand the individual functions that implement it.
-
----
-
-This shifts the unit of explanation from **"functions" to "jobs."** So if 14 functions collectively gather data, clean it, score it, and select candidates, the document explains those as perhaps three meaningful stages rather than giving you 14 mini function descriptions.
-
-<br>
