@@ -40,6 +40,7 @@ and test references. State the exact target at the top of the report.
 
 - Missing coverage: changed functions, branches, and error paths with no test at all.
 - Happy-path-only tests: no test for failure modes, invalid input, or error returns.
+- Write tests that actively try to break the system.
 - Edge cases: empty input, null/None, zero, negative numbers, boundary values (min, max,
   max+1), duplicates, very large input, unicode, already-sorted or degenerate input, mixed types.
 - Adversarial and abuse cases for anything reachable by untrusted input:
