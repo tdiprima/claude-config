@@ -12,4 +12,4 @@ I've dumped the messy notes/instructions on you exactly as they are. Turn them i
 
 **UNKNOWN:** Stuff the notes don't make clear
 
-Then we'll have a little **"stone tablet"** for the project.
+At the end, turn those into one stupidly-simple requirements list: "The system must do X. It must get Y from here. It must put Z there. It must never do Q."
