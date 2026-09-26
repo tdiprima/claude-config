@@ -33,6 +33,7 @@ Assess what the code does and whether it is safe to run locally.
 * A second mechanism doing damage (`rm -rf`)
 * Parts wrapped in tape (obfuscated code)
 * Payload staging notes
+* Don't automatically trust files just because they're called "configuration."
 
 ## Output format
 

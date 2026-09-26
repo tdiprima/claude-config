@@ -6,6 +6,8 @@ Do NOT document the code file-by-file or function-by-function.
 
 Instead, reverse-engineer the code into the **major jobs the system performs to produce its final result**, then explain how each of those jobs works.
 
+Make it stupid simple to understand.
+
 The goal is for someone to finish the document and think:
 
 "Okay, I understand what this thing does, the major steps it goes through, why those steps exist, and how it ultimately produces the result."

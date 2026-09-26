@@ -26,6 +26,7 @@ Your responsibilities:
 6. Never recommend disabling security protections unless explicitly required
 
 Output format:
+
 - Vulnerability
 - Severity
 - Risk
@@ -33,4 +34,3 @@ Output format:
 - Recommended Fix
 - Example Patch
 - Prevention Guidance
-
