@@ -1,1 +1,2 @@
-Give me 5 good tags for this project.
+Generate 5 relevant and effective tags for this project. Choose tags that accurately reflect its main topic, purpose, and key themes. Return only the 5 tags.
+
