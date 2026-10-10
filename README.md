@@ -1,23 +1,29 @@
 # Claude Config
 
-Portable Claude Code configuration with coding rules, custom skills, and a bootstrap script for fast machine setup.
+Portable Claude Code configuration: global rules, custom commands, skills, and two scripts that get it all onto a new machine.
 
-## Starting Fresh Shouldn't Mean Starting Over
+## Why
 
-Every time you provision a new machine, you end up reconfiguring your tools from scratch — hunting down the same settings, recreating the same workflows, and hoping you remember everything you had before. With an AI assistant like Claude Code, that friction compounds: your rules, skills, and behavioral guidelines live nowhere persistent by default.
+Claude Code reads its global config from `~/.claude`. By default that directory lives on one machine, unversioned. Reinstall your laptop, get a second workstation, or spin up a dev VM, and every rule and slash command you've tuned is gone.
 
-## A Single Command That Rebuilds Your Claude Environment
+This repo keeps `~/.claude` under version control. Clone it anywhere, run one script, and Claude behaves the same way it does on your main machine.
 
-This repo stores your complete Claude Code setup under version control — coding standards, security rules, language-specific guidelines, and reusable skills — and symlinks it into `~/.claude` where Claude Code expects it. Clone it on any machine and run one script to get your full environment back.
+## What's inside
 
-### What gets installed:
-- `CLAUDE.md` — core development principles Claude follows across all projects
-- `rules/` — language and domain-specific coding standards (Python, Bash, security, logging, testing, and more)
-- `skills/` — reusable slash commands: `/review`, `/threat-model`, `/project-memory`
+```
+claude/              <- becomes ~/.claude
+  CLAUDE.md          global principles Claude follows in every project
+  rules/             per-language and per-domain standards (python, bash, js, security, testing, logging, ...)
+  commands/          slash commands (/readme, /explain-code, /secure-code-review, /tags, ...)
+  skills/            skills (/review, /threat-model)
+vibe-coding-workflow/   separate review kit for Claude Code + Codex (has its own README and installer)
+bootstrap.sh         new-machine setup: deps check + install Claude Code + link config
+link.sh              symlink claude/ -> ~/.claude (used by bootstrap.sh)
+```
 
-## Example
+## Use case: new laptop, same Claude in five minutes
 
-On a freshly provisioned machine:
+You get a fresh Mac. Nothing is installed. You want Claude Code running with your Python rules, your security rules, and your `/secure-code-review` command before you write a line of code.
 
 ```bash
 git clone https://github.com/tdiprima/claude-config
@@ -25,23 +31,34 @@ cd claude-config
 ./bootstrap.sh
 ```
 
-Claude Code is installed, and `~/.claude` is symlinked to your repo. Any edits you make are version-controlled automatically.
+That's it. Claude Code is installed, `~/.claude` points at `claude/` in this repo, and every edit you make to a rule or command from now on is a normal git change you can commit and pull on your other machines.
 
-To re-link without reinstalling Claude:
+## bootstrap.sh vs link.sh
 
-```bash
-./link.sh
-```
+| | `bootstrap.sh` | `link.sh` |
+|---|---|---|
+| Checks for `git`, `curl`, `rsync` | yes | no |
+| Installs Claude Code (if missing) | yes | no |
+| Symlinks `claude/` to `~/.claude` | yes (by calling `link.sh`) | yes |
+| Backs up an existing `~/.claude` | yes (via `link.sh`) | yes, to `~/.claude.backup.<timestamp>` |
+| When to run | new machine | Claude already installed, just need the link |
 
-If `~/.claude` already exists, `link.sh` backs it up with a timestamp before creating the symlink — nothing is overwritten silently.
+**Do you need to run both? No.** `bootstrap.sh` calls `link.sh` at the end, so running `bootstrap.sh` does everything.
 
-## Usage
+Run `link.sh` on its own only when Claude Code is already installed and you just want the symlink, for example:
 
-| Script | What it does |
-|---|---|
-| `bootstrap.sh` | Installs Claude Code and links this repo to `~/.claude` |
-| `link.sh` | Links this repo to `~/.claude` only (skips Claude install) |
+- You cloned the repo on a machine that already has Claude Code.
+- You moved the repo to a new path and need to re-point `~/.claude`.
+- `~/.claude` got replaced by a real directory and you want the symlink back.
 
-**Add your own rules** by dropping a Markdown file into `claude/rules/`. Claude Code picks them up automatically.
+Both scripts are safe to re-run. If `~/.claude` already points at this repo, `link.sh` exits without changing anything.
 
-**Add your own skills** by creating a `claude/skills/<name>/SKILL.md` file. Invoke them with `/<name>` inside any Claude session.
+## Customizing
+
+- **Add a rule:** drop a Markdown file in `claude/rules/`. Claude Code loads it automatically.
+- **Add a slash command:** create `claude/commands/<name>.md`. Invoke with `/<name>`.
+- **Add a skill:** create `claude/skills/<name>/SKILL.md`. Invoke with `/<name>`.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
