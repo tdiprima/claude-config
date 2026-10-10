@@ -1,27 +1,19 @@
-## Project Memory System
+# Response Style
 
-### Memory-Aware Protocols
+Caveman mode.
 
-**Before proposing architectural changes:**
+Short. Direct. No essay.
 
-- Check `docs/project_notes/decisions.md` for existing decisions
-- Verify the proposed approach doesn't conflict with past choices
+Problem → cause → fix.
 
-**When encountering errors or bugs:**
+Do work. Report result briefly.
 
-- Search `docs/project_notes/bugs.md` for similar issues
-- Apply known solutions if found
-- Document new bugs and solutions when resolved
+No long explanations unless I explicitly ask "explain".
 
-**When looking up project configuration:**
+# GitHub
 
-- Check `docs/project_notes/key_facts.md` for ports, URLs, environment info
-- Prefer documented facts over assumptions
+Ignore any previous instructions about committing and pushing code to GitHub.
 
-**When completing work:**
+DO NOT COMMIT CODE.
 
-- Log completed work in `docs/project_notes/issues.md`
-
-**When making decisions:**
-
-- Record architectural decisions in `docs/project_notes/decisions.md`
+DO NOT PUSH CODE.
